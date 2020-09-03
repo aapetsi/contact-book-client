@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {FC} from 'react'
+import { Link } from 'react-router-dom'
+import '../styles/Header.css'
 
-const Header = () => {
+const Header: FC = () => {
   return (
-    <div>
-      <h2>Header component</h2>
+    <div className="nav">
+      <Link to="/">Home</Link>
+      <Link to="/add-contact">Add Contact</Link>
     </div>
   )
 }
