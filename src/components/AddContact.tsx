@@ -108,7 +108,7 @@ const AddContact = () => {
         name='phone2'
         rules={[{}]}
       >
-        <Input className='input' />
+        <Input className='input' pattern='^0[2,5]\d{8}' placeholder='024123456' />
       </Form.Item>
 
       <Form.Item
@@ -116,7 +116,7 @@ const AddContact = () => {
         name='phone3'
         rules={[{}]}
       >
-        <Input className='input' />
+        <Input className='input' pattern='^0[2,5]\d{8}' placeholder='024123456' />
       </Form.Item>
 
       <Form.Item

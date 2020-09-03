@@ -19,3 +19,22 @@ export const addContact = (contact: ContactPayload) => (dispatch: Dispatch) => {
     payload: contact
   })
 }
+
+export const getContacts = () => (dispatch: Dispatch) => {
+  dispatch({
+    type: Actions.GET_CONTACTS,
+    payload: []
+  })
+}
+
+export const deleteContact = (id: string) => (dispatch: Dispatch) => {
+  dispatch({
+    type: Actions.DELETE_CONTACT,
+    payload: id
+  })
+}
+
+export const editContact = (contact: ContactPayload) => (dispatch: Dispatch) => {
+  deleteContact(contact.email)
+  addContact(contact)
+}
