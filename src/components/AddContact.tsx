@@ -1,5 +1,6 @@
 import React from 'react'
 import {Form, Input, Button} from 'antd'
+import {useHistory} from 'react-router-dom'
 import '../styles/AddContact.css'
 
 const layout = {
@@ -19,8 +20,14 @@ const validateMessages = {
 }
 
 const AddContact = () => {
+  const history = useHistory()
+
   const onFinish = (values: string) => {
     console.log('Success:', values)
+    /**
+     * @todo Implement form submission and error handling
+     */
+    history.push('/')
   }
 
   const onFinishFailed = (errorInfo: any) => {
