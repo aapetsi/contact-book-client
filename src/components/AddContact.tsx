@@ -1,7 +1,9 @@
 import React from 'react'
-import {Form, Input, Button} from 'antd'
-import {useHistory} from 'react-router-dom'
+import { Form, Input, Button } from 'antd'
+import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import '../styles/AddContact.css'
+import * as ContactActions from '../store/actions'
 
 const layout = {
   labelCol: { span: 8 },
@@ -14,19 +16,19 @@ const tailLayout = {
 
 const validateMessages = {
   types: {
+    // eslint-disable-next-line
     email: '${label} is not valid!',
-    phone: '${label} is not a valid phone number'
+    // phone: '${label} is not a valid phone number'
   }
 }
 
 const AddContact = () => {
+  const dispatch = useDispatch()
   const history = useHistory()
-
-  const onFinish = (values: string) => {
+  
+  const onFinish = (values: any) => {
     console.log('Success:', values)
-    /**
-     * @todo Implement form submission and error handling
-     */
+    dispatch(ContactActions.addContact(values))
     history.push('/')
   }
 

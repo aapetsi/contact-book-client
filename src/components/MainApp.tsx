@@ -1,10 +1,13 @@
 import React from 'react'
+import { Typography } from 'antd'
 import ContactList from './ContactList'
+
+const { Title } = Typography
 
 const MainApp = () => {
   return (
     <div>
-      <h1>Main app</h1>
+      <Title>Contact Book</Title>
       <ContactList />
     </div>
   )

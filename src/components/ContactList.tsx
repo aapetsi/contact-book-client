@@ -1,4 +1,4 @@
-import React, { FC, Props } from 'react'
+import React from 'react'
 import Contact from './Contact'
 
 const ContactList = () => {

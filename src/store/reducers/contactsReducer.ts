@@ -1,10 +1,15 @@
 import * as Actions from '../action-types'
 
+interface ActionType {
+  type: string,
+  payload: any
+}
+
 const initialState = {
   contacts: []
 }
 
-const contactsReducer = (state=initialState, action) => {
+const contactsReducer = (state=initialState, action: ActionType) => {
   switch (action.type) {
     case Actions.GET_CONTACTS:
       return {
