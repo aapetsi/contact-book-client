@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import { gql } from 'apollo-boost'
 import { graphql} from 'react-apollo'
 import Contact from './Contact'
-import {getContactsQuery} from '../queries/queries'
+import { getContactsQuery } from '../queries/queries'
 
 
 const ContactList = (props) => {
@@ -11,15 +10,12 @@ const ContactList = (props) => {
   const contactState = useSelector((state) => state.contacts)
   
   const renderContacts = () => {
-    let contacts = props.data.contacts
+    let contacts = [{id: 1}, {id: 2}]
     if (contacts) {
-      contacts.map(contact => (<Contact key={contact.id} id={contact.id} />))
+      return contacts.map(contact => (<Contact key={contact.id} id={contact.id} />))
     }
   }
   
-  useEffect(() => {
-    console.log('mounted')
-  })
   return (
     <div>
       <h2>Contacts</h2>

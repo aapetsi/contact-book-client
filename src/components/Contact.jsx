@@ -1,10 +1,11 @@
 import React, {FunctionComponent} from 'react'
 
-interface ContactProps {
-  id: string
-}
+// interface ContactProps {
+//   id: string
+// }
 
-const Contact: FunctionComponent<ContactProps> = (props) => {
+const Contact = (props) => {
+  console.log(props)
   return (
     <div>
       <h2>Contact component</h2>
