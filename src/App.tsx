@@ -7,7 +7,7 @@ import AppRouter from './routers/AppRouter';
 import store from './store/store'
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql'
+  uri: 'https://apetsi-contact-book.herokuapp.com/v1/graphql'
 })
 
 const App = () => {

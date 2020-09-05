@@ -3,33 +3,28 @@ import {useDispatch, useSelector} from 'react-redux'
 import { gql } from 'apollo-boost'
 import { graphql} from 'react-apollo'
 import Contact from './Contact'
+import {getContactsQuery} from '../queries/queries'
 
-const getContactsQuery = gql`
-  {
-    contacts {
-      firstName
-    },
-    books {
-      name,
-      genre
-    }
-  }
-`
 
 const ContactList = (props) => {
-  console.log(props)
   const dispatch = useDispatch()
   const contactState = useSelector((state) => state.contacts)
+  
+  const renderContacts = () => {
+    let contacts = props.data.contacts
+    if (contacts) {
+      contacts.map(contact => (<Contact key={contact.id} id={contact.id} />))
+    }
+  }
+  
   useEffect(() => {
     console.log('mounted')
   })
   return (
     <div>
-      <h2>Contact list component</h2>
-     
-      <Contact id="1" />
-      <Contact id="2" />
-      <Contact id="3" />
+      <h2>Contacts</h2>
+      {props.data.loading && <p>Loading contacts ...</p>}
+      {renderContacts()}
     </div>
   )
 }

@@ -2,8 +2,11 @@ import React from 'react'
 import { Form, Input, Button } from 'antd'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import {graphql} from 'react-apollo'
 import '../styles/AddContact.css'
 import * as ContactActions from '../store/actions'
+import {addContactMutation} from '../queries/queries'
+
 
 const layout = {
   labelCol: { span: 8 },
@@ -136,4 +139,4 @@ const AddContact = () => {
   )
 }
 
-export default AddContact
+export default graphql(addContactMutation)(AddContact)
