@@ -21,7 +21,6 @@ const validateMessages = {
   types: {
     // eslint-disable-next-line
     email: '${label} is not valid!',
-    // phone: '${label} is not a valid phone number'
   }
 }
 

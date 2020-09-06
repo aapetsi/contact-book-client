@@ -1,13 +1,13 @@
 import React from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+// import {useDispatch, useSelector} from 'react-redux'
 import { graphql} from 'react-apollo'
 import Contact from './Contact'
 import { getContactsQuery } from '../queries/queries'
 
 
 const ContactList = (props) => {
-  const dispatch = useDispatch()
-  const contactState = useSelector((state) => state.contacts)
+  // const dispatch = useDispatch()
+  // const contactState = useSelector((state) => state.contacts)
   
   const renderContacts = () => {
     let contacts = props.data.contacts
