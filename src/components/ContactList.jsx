@@ -10,7 +10,7 @@ const ContactList = (props) => {
   const contactState = useSelector((state) => state.contacts)
   
   const renderContacts = () => {
-    let contacts = [{id: 1}, {id: 2}]
+    let contacts = props.data.contacts
     if (contacts) {
       return contacts.map(contact => (<Contact key={contact.id} id={contact.id} />))
     }
